@@ -4,7 +4,7 @@
     <h2 class="slider title">{{entries?.header}}</h2>
   </div>
   <div>
-    <p class="description_1">{{entries?.description_1}}</p>
+    <p class="description_1">{{entries?.description}}</p>
   </div>
 </div>
 <div class="container">
@@ -23,7 +23,7 @@
     <mat-card-title>{{entries?.page_components[0]?.digital_now?.title}}</mat-card-title>
     <mat-card-content>{{entries?.page_components[0]?.digital_now?.paragraph}}</mat-card-content>
     <picture>
-      <source media='(min-width:0px)' srcset='{{entries?.page_components[0]?.digital_now?.digital_now_images[0]?.url}}'>
+      <source media='(min-width:0px)' srcset='{{entries?.page_components[0]?.digital_now?.digital_now?.url}}'>
       <img mat-card-image src="" alt='Digital Now'>
     </picture>
     <mat-card-actions>
@@ -34,13 +34,37 @@
     <mat-card-title>{{entries?.page_components[1]?.exela_smart_office?.title}}</mat-card-title>
     <mat-card-content>{{entries?.page_components[1]?.exela_smart_office?.paragraph}}</mat-card-content>
     <picture>
-      <source media='(min-width:0px)' srcset="{{entries?.page_components[1]?.exela_smart_office?.smart_office_images[0].url}}">
+      <source media='(min-width:0px)' srcset="{{entries?.page_components[1]?.exela_smart_office?.exela_smart_office?.url}}">
       <img mat-card-image src="" alt="Smart Office Exela">
     </picture>
     <mat-card-actions>
       <button md-button>Explore The Exela Smart Office Suite</button>
     </mat-card-actions>
   </mat-card>
+</div>
+<div>
+  <ngb-carousel>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src="{{entries?.slide[0]?.slide_image[0]?.url}}" alt="{{entries?.slide[0]?.slide_image[0]?.title}}" />
+      </div>
+      <div class="carousel-caption">
+        <br />
+        <h3>{{entries?.slide[0]?.title}}</h3>
+        <br />
+        <p>{{entries?.slide[0]?.paragraph}}</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src="{{entries?.slide[1]?.slide_image[0]?.url}}" alt="{{entries?.slide[1]?.slide_image[0]?.title}}" />
+      </div>
+      <div class="carousel-caption">
+        <h3>{{entries?.slide[1]?.title}}</h3>
+        <p>{{entries?.slide[1]?.paragraph}}</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
 </div>
 
 <router-outlet></router-outlet>

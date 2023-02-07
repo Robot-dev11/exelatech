@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HomePageModule } from './home-page/home-page.module';
+import { CarouselModule } from '@syncfusion/ej2-angular-navigations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { HomePageModule } from './home-page/home-page.module';
     HttpClientModule,
     HomePageModule,
     MatCardModule,
-    AppRoutingModule
+    CarouselModule,
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,7 +11,6 @@ export class HomePageComponent implements OnInit{
   contentType: any
   entries: any
   digitalNow: any
-
   filterObject(inputObject: any) {
     const unWantedProps = [
       "uid",
@@ -42,9 +41,9 @@ export class HomePageComponent implements OnInit{
 
 
   getContentType(){
-    this.http.get('https://api.contentstack.io/v3/content_types/home_page', {headers: {
-      'api_key': 'blt778cc4f19e36f129',
-      'authorization':'csa9c189912eb48effa68e2536',
+    this.http.get('https://api.contentstack.io/v3/content_types/homepage', {headers: {
+      'api_key': 'bltf5554c294d5460cc',
+      'authorization':'csd40c61797ce6413e1975fb8a',
       'Content-Type':'application/json'
     }}).subscribe((data1: any) => {
       console.log('contenttype: ',data1)
@@ -55,16 +54,16 @@ export class HomePageComponent implements OnInit{
 
 
   getEntries(){
-    this.http.get('https://api.contentstack.io/v3/content_types/home_page/entries', {headers: {
-      'api_key': 'blt778cc4f19e36f129',
-      'authorization':'csa9c189912eb48effa68e2536',
+    this.http.get('https://api.contentstack.io/v3/content_types/homepage/entries', {headers: {
+      'api_key': 'bltf5554c294d5460cc',
+      'authorization':'csd40c61797ce6413e1975fb8a',
       'Content-Type':'application/json'
     }}).subscribe((data1: any) => {
       console.log('entries: ',data1.entries[0])
       this.entries = this.filterObject(data1.entries[0])
       console.log("entries : ", this.entries);
-      this.digitalNow = this.entries?.page_components[0]?.digital_now?.digital_now_images
-      console.log(this.digitalNow)
+      // this.digitalNow = this.entries?.page_components[0]?.digital_now?.digital_now_images
+      // console.log(this.digitalNow)
       // angular courousal
     })
   }

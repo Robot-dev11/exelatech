@@ -4,6 +4,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { HomePageRoutingModule } from './home-page-routing.module';
 import { SolutionsComponent } from './solutions/solutions.component';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @NgModule({
@@ -14,6 +16,7 @@ import { SolutionsComponent } from './solutions/solutions.component';
     CommonModule,
     MatButtonModule,
     MatCardModule,
+    NgbCarouselModule,
     HomePageRoutingModule
   ]
 })
