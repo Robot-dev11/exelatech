@@ -19,52 +19,95 @@
   <p class="description_1">{{entries?.description_2}}</p>
 </div>
 <div>
-  <mat-card>
-    <mat-card-title>{{entries?.page_components[0]?.digital_now?.title}}</mat-card-title>
-    <mat-card-content>{{entries?.page_components[0]?.digital_now?.paragraph}}</mat-card-content>
-    <picture>
-      <source media='(min-width:0px)' srcset='{{entries?.page_components[0]?.digital_now?.digital_now?.url}}'>
-      <img mat-card-image src="" alt='Digital Now'>
-    </picture>
-    <mat-card-actions>
-      <button md-button>Explore The Digital Now Suite</button>
-    </mat-card-actions>
-  </mat-card>
-  <mat-card>
-    <mat-card-title>{{entries?.page_components[1]?.exela_smart_office?.title}}</mat-card-title>
-    <mat-card-content>{{entries?.page_components[1]?.exela_smart_office?.paragraph}}</mat-card-content>
-    <picture>
-      <source media='(min-width:0px)' srcset="{{entries?.page_components[1]?.exela_smart_office?.exela_smart_office?.url}}">
-      <img mat-card-image src="" alt="Smart Office Exela">
-    </picture>
-    <mat-card-actions>
-      <button md-button>Explore The Exela Smart Office Suite</button>
-    </mat-card-actions>
-  </mat-card>
+  <mat-toolbar color="primary">
+    Exela Product
+  </mat-toolbar>
+    <div class="content">
+      <mat-card *ngFor="let item of group" class="mat-elevation-z4">
+        <mat-card-header>
+          <img mat-card-image id="logo" src="{{item.product_logo[0].url}}">
+        </mat-card-header>
+        <mat-card-title>{{item.product_headline}}</mat-card-title>
+        <mat-card-content>
+          <p>
+            {{item.description}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
 </div>
-<div>
-  <ngb-carousel>
-    <ng-template ngbSlide>
-      <div class="picsum-img-wrapper">
-        <img src="{{entries?.slide[0]?.slide_image[0]?.url}}" alt="{{entries?.slide[0]?.slide_image[0]?.title}}" />
+  <div class="container2">
+    <mat-card>
+      <mat-card-title>{{entries?.page_components[0]?.digital_now?.title}}</mat-card-title>
+      <mat-card-content>{{entries?.page_components[0]?.digital_now?.paragraph}}</mat-card-content>
+      <picture>
+        <source media='(min-width:0px)' srcset='{{entries?.page_components[0]?.digital_now?.digital_now?.url}}'>
+        <img mat-card-image src="" alt='Digital Now'>
+      </picture>
+      <mat-card-actions>
+        <button md-button>Explore The Digital Now Suite</button>
+      </mat-card-actions>
+    </mat-card>
+    <mat-card>
+      <mat-card-title>{{entries?.page_components[1]?.exela_smart_office?.title}}</mat-card-title>
+      <mat-card-content>{{entries?.page_components[1]?.exela_smart_office?.paragraph}}</mat-card-content>
+      <picture>
+        <source media='(min-width:0px)' srcset="{{entries?.page_components[1]?.exela_smart_office?.exela_smart_office?.url}}">
+        <img mat-card-image src="" alt="Smart Office Exela">
+      </picture>
+      <mat-card-actions>
+        <button md-button>Explore The Exela Smart Office Suite</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <br />
+
+  <div>
+    <ngb-carousel>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="{{entries?.slide[0]?.slide_image[0]?.url}}" alt="{{entries?.slide[0]?.slide_image[0]?.title}}" />
+        </div>
+        <div class="carousel-caption">
+          <br />
+          <h3>{{entries?.slide[0]?.title}}</h3>
+          <br />
+          <p>{{entries?.slide[0]?.paragraph}}</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="{{entries?.slide[1]?.slide_image[0]?.url}}" alt="{{entries?.slide[1]?.slide_image[0]?.title}}" />
+        </div>
+        <div class="carousel-caption">
+          <h3>{{entries?.slide[1]?.title}}</h3>
+          <p>{{entries?.slide[1]?.paragraph}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+
+  <div>
+    <mat-toolbar color="primary">
+      {{entries?.whitepaper}}
+    </mat-toolbar>
+      <div class="whitepaper">
+        <mat-card *ngFor="let item of whitepaper" class="mat-elevation-z4">
+          <mat-card-header>
+            <img mat-card-image id="image" src="{{item.img.url}}">
+          </mat-card-header>
+          <a href="{{item.link[0].href}}">{{item.link[0].title}}</a>
+          <mat-card-content>
+            <p>{{item.description}}</p>
+          </mat-card-content>
+          <mat-card-footer>
+            <a href="item.articles.href">
+              {{item.articles.title}}
+            </a>
+          </mat-card-footer>
+        </mat-card>
       </div>
-      <div class="carousel-caption">
-        <br />
-        <h3>{{entries?.slide[0]?.title}}</h3>
-        <br />
-        <p>{{entries?.slide[0]?.paragraph}}</p>
-      </div>
-    </ng-template>
-    <ng-template ngbSlide>
-      <div class="picsum-img-wrapper">
-        <img src="{{entries?.slide[1]?.slide_image[0]?.url}}" alt="{{entries?.slide[1]?.slide_image[0]?.title}}" />
-      </div>
-      <div class="carousel-caption">
-        <h3>{{entries?.slide[1]?.title}}</h3>
-        <p>{{entries?.slide[1]?.paragraph}}</p>
-      </div>
-    </ng-template>
-  </ngb-carousel>
-</div>
+  </div>
 
 <router-outlet></router-outlet>

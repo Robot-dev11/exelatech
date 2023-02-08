@@ -9,7 +9,62 @@ div {
   font-weight: 500;
 }
 
+#logo{
+  position: relative;
+  float: left;
+  width:  100px;
+  height: 70px;
+  background-position: 50% 50%;
+  background-repeat:   no-repeat;
+  background-size:     cover;
+}
+mat-card{
+  max-width: 400px;
+  margin-bottom: 8px;
+}
 
+.content {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px 30px;
+  flex-flow: row wrap;
+}
+
+.whitepaper{
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 10px 30px;
+  flex-flow: row wrap;
+}
+
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+ 
+#{$a-tags} {
+  color: red;
+  text-decoration: none;
+}
+#{$a-tags-hover} {
+  color: blue;
+}
+
+.container2{
+  padding: 16px;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px 30px;
+  flex-flow: row wrap;
+}
+
+.content > mat-card {
+  width: 200px;
+}
+
+h3, p{
+  color: black;
+}
 .container .vertical-center{
  color: #fff;
  background: #1f94e6;

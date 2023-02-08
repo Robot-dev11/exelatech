@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
+
+
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -11,6 +13,9 @@ export class HomePageComponent implements OnInit{
   contentType: any
   entries: any
   digitalNow: any
+  group: any
+  whitepaper: any
+
   filterObject(inputObject: any) {
     const unWantedProps = [
       "uid",
@@ -47,7 +52,6 @@ export class HomePageComponent implements OnInit{
       'Content-Type':'application/json'
     }}).subscribe((data1: any) => {
       console.log('contenttype: ',data1)
-      // console.log(data?.content_type?.schema)
       this.contentType = data1?.content_type?.schema;
     })
   }
@@ -62,9 +66,9 @@ export class HomePageComponent implements OnInit{
       console.log('entries: ',data1.entries[0])
       this.entries = this.filterObject(data1.entries[0])
       console.log("entries : ", this.entries);
-      // this.digitalNow = this.entries?.page_components[0]?.digital_now?.digital_now_images
-      // console.log(this.digitalNow)
-      // angular courousal
+      this.group = this.entries?.group
+      this.whitepaper = this.entries?.whitepapers
+      console.log(this.whitepaper);
     })
   }
 

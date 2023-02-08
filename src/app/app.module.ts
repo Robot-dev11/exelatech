@@ -9,6 +9,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { HomePageModule } from './home-page/home-page.module';
 import { CarouselModule } from '@syncfusion/ej2-angular-navigations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
     MatCardModule,
     CarouselModule,
     AppRoutingModule,
+    MatGridListModule,
+    MatToolbarModule,
     NgbModule
   ],
   providers: [],
