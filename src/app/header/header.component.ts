@@ -23,8 +23,8 @@ export class HeaderComponent implements OnInit {
 
   getHeaders(){
     this.http.get('https://api.contentstack.io/v3/content_types/header', {headers: {
-      'api_key': 'bltf5554c294d5460cc',
-      'authorization':'csd40c61797ce6413e1975fb8a',
+      'api_key': 'Your ContentStack Stack api',
+      'authorization':'Your Contentstack Managment Token',
       'Content-Type':'application/json'
     }}).subscribe((data1: any) => {
       console.log('contenttype: ',data1)
@@ -34,8 +34,8 @@ export class HeaderComponent implements OnInit {
 
   getEntries(){
     this.http.get('https://api.contentstack.io/v3/content_types/header/entries', {headers: {
-      'api_key': 'bltf5554c294d5460cc',
-      'authorization':'csd40c61797ce6413e1975fb8a',
+      'api_key': 'Your ContentStack Stack api',
+      'authorization':'Your Contentstack Managment Token',
       'Content-Type':'application/json'
     }}).subscribe((data1: any) => {
       console.log('entries: ',data1.entries[0])
