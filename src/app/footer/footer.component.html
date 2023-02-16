@@ -1,0 +1,99 @@
+<!-- Footer -->
+<footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!-- Section: Social media -->
+      <section class="mb-4" *ngFor="let item of socialComponents">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" href="item.href" role="button"
+          ><i class="fab fa-facebook-f">{{item.title}}</i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+  
+      <!-- Section: Form -->
+      <section class="">
+        <form action="">
+          <!--Grid row-->
+          <div class="row d-flex justify-content-center">
+            <!--Grid column-->
+            <div class="col-auto">
+              <p class="pt-2">
+                <strong>{{entries?.description}}</strong>
+              </p>
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-md-5 col-12">
+              <!-- Email input -->
+              <div class="form-outline form-white mb-4">
+                <input type="email" id="form5Example21" class="form-control" />
+                <label class="form-label" for="form5Example21">Email address</label>
+              </div>
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-auto">
+              <!-- Submit button -->
+              <a type="submit" class="btn btn-outline-light mb-4" href="entries?.subscribe?.href">
+                {{entries?.subscribe?.title}}
+              </a>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </form>
+      </section>
+      <!-- Section: Form -->
+  
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase" >{{entries?.article[0]?.articles?.single_line[0]}}</h5>
+  
+            <ul class="list-unstyled mb-0" >
+              <li *ngFor="let item of discover">
+                <a href="item.href" class="text-white">{{item.title}}</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+          
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase" >{{entries?.article[1]?.articles?.single_line[0]}}</h5>
+  
+            <ul class="list-unstyled mb-0" >
+              <li *ngFor="let item of resources">
+                <a href="item.href" class="text-white">{{item.title}}</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase" >{{entries?.article[2]?.articles?.single_line[0]}}</h5>
+  
+            <ul class="list-unstyled mb-0" >
+              <li *ngFor="let item of company">
+                <a href="item.href" class="text-white">{{item.title}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--Grid row-->
+      </section>
+      <!-- Section: Links -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      {{entries?.copyright}}
+    </div>
+    <!-- Copyright -->
+</footer>
+  <!-- Footer -->

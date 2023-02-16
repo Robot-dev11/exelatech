@@ -1,6 +1,7 @@
 <div id="slider">
   <div class="slider-content">
-    <h2 class="slider title">{{entries?.header}}</h2>
+    <img src="//a.storyblok.com/f/194695/1420x820/0a466f0de2/exela-home-banner-new1.jpg" class="img" width="100">
+    <h2 class="carousel-caption">{{entries?.header}}</h2>
   </div>
   <div>
     <p class="description_1">{{entries?.description}}</p>
@@ -12,7 +13,7 @@
   </div>
 </div>
 <div class="slider-content">
-  <h2 class="slider title">{{entries?.header_2}}</h2>
+  <h2 class="slider_title">{{entries?.header_2}}</h2>
 </div>
 <div>
   <p class="description_1">{{entries?.description_2}}</p>
@@ -24,7 +25,7 @@
     <div class="content">
       <mat-card *ngFor="let item of group" class="mat-elevation-z4">
         <mat-card-header>
-          <img mat-card-image id="logo" src="{{item.product_logo[0].url}}">
+          <img class="img1" mat-card-image id="logo" src="{{item.product_logo[0].url}}">
         </mat-card-header>
         <mat-card-title>{{item.product_headline}}</mat-card-title>
         <mat-card-content>
@@ -41,7 +42,7 @@
       <mat-card-content>{{entries?.page_components[0]?.digital_now?.paragraph}}</mat-card-content>
       <picture>
         <source media='(min-width:0px)' srcset='{{entries?.page_components[0]?.digital_now?.digital_now?.url}}'>
-        <img mat-card-image src="" alt='Digital Now'>
+        <img class="img1" mat-card-image src="" alt='Digital Now'>
       </picture>
       <mat-card-actions>
         <button md-button>Explore The Digital Now Suite</button>
@@ -52,7 +53,7 @@
       <mat-card-content>{{entries?.page_components[1]?.exela_smart_office?.paragraph}}</mat-card-content>
       <picture>
         <source media='(min-width:0px)' srcset="{{entries?.page_components[1]?.exela_smart_office?.exela_smart_office?.url}}">
-        <img mat-card-image src="" alt="Smart Office Exela">
+        <img class="img1" mat-card-image src="" alt="Smart Office Exela">
       </picture>
       <mat-card-actions>
         <button md-button>Explore The Exela Smart Office Suite</button>
@@ -66,7 +67,7 @@
     <ngb-carousel>
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-          <img src="{{entries?.slide[0]?.slide_image[0]?.url}}" alt="{{entries?.slide[0]?.slide_image[0]?.title}}" />
+          <img class="img1" src="{{entries?.slide[0]?.slide_image[0]?.url}}" alt="{{entries?.slide[0]?.slide_image[0]?.title}}" />
         </div>
         <div class="carousel-caption">
           <br />
@@ -77,7 +78,7 @@
       </ng-template>
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-          <img src="{{entries?.slide[1]?.slide_image[0]?.url}}" alt="{{entries?.slide[1]?.slide_image[0]?.title}}" />
+          <img class="img1" src="{{entries?.slide[1]?.slide_image[0]?.url}}" alt="{{entries?.slide[1]?.slide_image[0]?.title}}" />
         </div>
         <div class="carousel-caption">
           <h3>{{entries?.slide[1]?.title}}</h3>
@@ -94,7 +95,7 @@
       <div class="whitepaper">
         <mat-card *ngFor="let item of whitepaper" class="mat-elevation-z4">
           <mat-card-header>
-            <img mat-card-image id="image" src="{{item.img.url}}">
+            <img class="img1" mat-card-image id="image" src="{{item.img.url}}">
           </mat-card-header>
           <a href="{{item.link[0].href}}">{{item.link[0].title}}</a>
           <mat-card-content>

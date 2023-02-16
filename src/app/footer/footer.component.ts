@@ -2,32 +2,28 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class FooterComponent implements OnInit {
+  contentType: any;
+  entries: any;
+  socialComponents: any
+  discover: any
+  resources: any
+  company: any
 
   constructor(private http: HttpClient) { }
-
-  entries: any;
-  contentType: any;
-  pages: any;
-  menu: any;
-  industries: any;
-  solutions: any;
-  about_exela: any;
-  link1: any
-  link2: any
-  link3: any
 
   ngOnInit(): void {
     this.getHeaders()
     this.getEntries()
   }
 
+
   getHeaders(){
-    this.http.get('https://api.contentstack.io/v3/content_types/header', {headers: {
+    this.http.get('https://api.contentstack.io/v3/content_types/footer', {headers: {
       'api_key': 'bltf5554c294d5460cc',
       'authorization':'cs0ed02087da26660b1edb05ab',
       'Content-Type':'application/json'
@@ -36,23 +32,21 @@ export class HeaderComponent implements OnInit {
     })
   }
 
+
   getEntries(){
-    this.http.get('https://api.contentstack.io/v3/content_types/header/entries', {headers: {
+    this.http.get('https://api.contentstack.io/v3/content_types/footer/entries', {headers: {
       'api_key': 'bltf5554c294d5460cc',
       'authorization':'cs0ed02087da26660b1edb05ab',
       'Content-Type':'application/json'
     }}).subscribe((data1: any) => {
       this.entries = this.filterObject(data1.entries[0])
-      this.pages = this.entries?.page
-      this.menu = this.entries?.header_components
-      this.industries = this.entries?.header_components[0]
-      this.link1 = this.industries?.industries?.link
-      this.solutions = this.entries?.header_components[1]
-      this.link2 = this.solutions?.link
-      this.about_exela = this.entries?.header_components[2]
-      this.link3 = this.about_exela?.link
+      this.socialComponents = this.entries?.social_link
+      this.discover = this.entries?.article[0]?.articles?.link
+      this.resources = this.entries?.article[1]?.articles?.link
+      this.company = this.entries?.article[2]?.articles?.link
     })
   }
+
 
   filterObject(inputObject: any) {
     const unWantedProps = [

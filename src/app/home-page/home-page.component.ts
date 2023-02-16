@@ -47,11 +47,10 @@ export class HomePageComponent implements OnInit{
 
   getContentType(){
     this.http.get('https://api.contentstack.io/v3/content_types/homepage', {headers: {
-      'api_key': 'Your ContentStack Stack api',
-      'authorization':'Your Contentstack Managment Token',
+      'api_key': 'bltf5554c294d5460cc',
+      'authorization':'cs0ed02087da26660b1edb05ab',
       'Content-Type':'application/json'
     }}).subscribe((data1: any) => {
-      console.log('contenttype: ',data1)
       this.contentType = data1?.content_type?.schema;
     })
   }
@@ -59,16 +58,13 @@ export class HomePageComponent implements OnInit{
 
   getEntries(){
     this.http.get('https://api.contentstack.io/v3/content_types/homepage/entries', {headers: {
-      'api_key': 'Your ContentStack Stack api',
-      'authorization':'Your Contentstack Managment Token',
+      'api_key': 'bltf5554c294d5460cc',
+      'authorization':'cs0ed02087da26660b1edb05ab',
       'Content-Type':'application/json'
     }}).subscribe((data1: any) => {
-      console.log('entries: ',data1.entries[0])
       this.entries = this.filterObject(data1.entries[0])
-      console.log("entries : ", this.entries);
       this.group = this.entries?.group
       this.whitepaper = this.entries?.whitepapers
-      console.log(this.whitepaper);
     })
   }
 
